@@ -363,6 +363,12 @@ Documentation
 
     class tqdm():
       """
+
+.. code:: python
+
+    from tqdm import tqdm
+    for i in tqdm(range(100), unit='frame', rate_unit='fps'):
+        ...
       Decorate an iterable object, returning an iterator which acts exactly
       like the original iterable, but prints a dynamically updating
       progress bar every time a value is requested.
@@ -431,6 +437,15 @@ Parameters
 * unit  : str, optional  
     String that will be used to define the unit of each iteration
     [default: it].
+
+Rate units can be customized independently of the iteration unit:
+
+.. code:: python
+
+    from tqdm import tqdm
+    for i in tqdm(range(100), unit='frame', rate_unit='fps'):
+        ...
+
 * unit_scale  : bool or int or float, optional  
     If 1 or True, the number of iterations will be reduced/scaled
     automatically and a metric prefix following the
